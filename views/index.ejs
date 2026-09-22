@@ -15,6 +15,9 @@
     <p>
       <%= message.added.toLocaleString() %>
     </p>
+      <a href="/message/<%= message.id %>">
+    <span>Open</span>
+  </a>
     </li>
     
   <% }); %>
