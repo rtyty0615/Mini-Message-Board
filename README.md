@@ -26,23 +26,25 @@ Architecture: MVC (Model-View-Controller)
 
 ## Project Structure
 
+```text
 Mini-Message-Board/
 ├── controllers/
-│ └── messageController.js # Request handlers and business logic
+│   └── messageController.js      # Request handlers and business logic
 ├── errors/
-│ └── CustomNotFoundError.js # Custom 404 Error class
+│   └── CustomNotFoundError.js   # Custom 404 Error class
 ├── models/
-│ └── messages.js # In-memory message store and data helpers
+│   └── messages.js               # In-memory message store and data helpers
 ├── routes/
-│ ├── indexRouter.js # Main message list route
-│ ├── newRouter.js # Form display and submission route
-│ └── messageRouter.js # Individual message lookup route
+│   ├── indexRouter.js            # Main message list route
+│   ├── newRouter.js              # Form display and submission route
+│   └── messageRouter.js          # Individual message lookup route
 ├── views/
-│ ├── index.ejs # Feed template with message listing
-│ ├── new.ejs # Form template for new messages
-│ ├── message.ejs # Single message detail template
-│ └── navbar.ejs # Reusable navigation partial
+│   ├── index.ejs                 # Feed template with message listing
+│   ├── new.ejs                   # Form template for new messages
+│   ├── message.ejs               # Single message detail template
+│   └── navbar.ejs                # Reusable navigation partial
 ├── public/
-│ └── styles.css # Static styles
-├── app.js # Server entry point and middleware configuration
+│   └── styles.css                # Static styles
+├── app.js                        # Server entry point and middleware configuration
 └── package.json
+```
