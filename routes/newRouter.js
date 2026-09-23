@@ -7,7 +7,6 @@ newRouter.get("/", (req, res) => {
 });
 
 newRouter.post("/", (req, res) => {
-  console.log("Form Data Received:", req.body.message);
   messages.push({
     text: req.body.message,
     user: req.body.user,
