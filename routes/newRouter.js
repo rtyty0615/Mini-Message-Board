@@ -1,20 +1,19 @@
 const { Router } = require("express");
 const newRouter = Router();
-const { messages, counter } = require("../models/messages");
+const db = require("../db/queries");
 
 newRouter.get("/", (req, res) => {
   res.render("new", { title: "New Message" });
 });
 
-newRouter.post("/", (req, res) => {
-  messages.push({
-    text: req.body.message,
-    user: req.body.user,
-    added: new Date(),
-    id: counter.value,
-  });
-  counter.increment();
-  res.redirect("/");
+newRouter.post("/", async (req, res, next) => {
+  try {
+    const { message, user } = req.body;
+    await db.insertMessage(message, user);
+    res.redirect("/");
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = { newRouter };

@@ -1,10 +1,10 @@
-const messageData = require("../models/messages");
+const db = require("../db/queries");
 const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
 const getMessageById = async (req, res) => {
   const { messageId } = req.params;
 
-  const message = await messageData.getMessageById(Number(messageId));
+  const message = await db.getMessageById(Number(messageId));
 
   if (!message) {
     throw new CustomNotFoundError("Message not found");
