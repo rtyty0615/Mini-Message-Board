@@ -8,6 +8,8 @@ Message Feed (/): Displays all submitted messages with usernames, timestamps, an
 
 New Message Form (/new): Dedicated page allowing users to post new messages.
 
+Server-Side Validation: Form input validation, trimming, and sanitization powered by express-validator to guarantee data integrity before storage.
+
 Dynamic Message Details (/message/:id): Route-parameterized detail view for individual messages by ID.
 
 In-Memory Store: Shared data layer with auto-incrementing IDs and lookup helpers.
@@ -20,6 +22,8 @@ Runtime: Node.js
 
 Framework: Express.js
 
+Validation: express-validator
+
 View Engine: EJS
 
 Architecture: MVC (Model-View-Controller)
@@ -29,7 +33,7 @@ Architecture: MVC (Model-View-Controller)
 ```text
 Mini-Message-Board/
 ├── controllers/
-│   └── messageController.js      # Request handlers and business logic
+│   └── messageController.js      # Request handlers, validation middleware, and business logic
 ├── errors/
 │   └── CustomNotFoundError.js   # Custom 404 Error class
 ├── models/
